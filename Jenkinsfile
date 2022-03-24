@@ -33,6 +33,7 @@ for (i = 0; i < buildTypes.size(); i++) {
     if (buildType == 'Windows' && jdk == 17) {
       continue // TODO pending jenkins-infra/helpdesk#2822
     }
+   
     builds["${buildType}-jdk${jdk}"] = {
       // see https://github.com/jenkins-infra/documentation/blob/master/ci.adoc#node-labels for information on what node types are available
       def agentContainerLabel = jdk == 8 ? 'maven' : 'maven-' + jdk
